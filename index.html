@@ -1,47 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <link rel="stylesheet" href="./assets/style.css" />
-  <title>Weather Finder</title>
-</head>
-
-<body class="flex-column min-100-vh">
-  <header class="hero">
-    <h1 class="app-title">Weather Finder!</h1>
-    <p>Search for current weather conditions! 
-    </p>
-  </header>
-
-    <main class="flex-row justify-space-between">
-      <div class="card">
-        <h3 class="card-header text-uppercase">Search By City</h3>
-        <form id="user-form" class="card-body">
-          <label class="form-label" for="username">City Name</label>
-          <input name="city" id="city" type="text" autofocus="true" class="form-input" />
-          <button type="submit" class="btn">Search Cities</button>
-        </form>
-      </div>
-      <h2 class="subtitle">Current City <span id="city-search-term"></span></h2>
-  <div id="city-container" class="list-group"></div>
-      <div class="col-12 col-md-4"></div>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Weather Finder!</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       
-    
-      <div class="col-12 col-md-8">
-        <div class="card">
-          <div class="card-body" id="language-buttons">
-          </div>
-        </div>
-    
-  </div>
-  
-    </main>
-  <script src="./assets/script.js"></script>
-</body>
-
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link
+         rel="stylesheet"
+         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+         />
+      <link
+         rel="stylesheet"
+         href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+         crossorigin="anonymous"
+         />
+      <link
+         href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+         rel="stylesheet"
+         />
+      <link rel="stylesheet" href="./assets/style.css">
+   </head> 
+   <body>
+      <div class="container-12 " id="page-container">
+         <header>
+            <div class=" text-center bg-dark text-light">
+               <h1 class="display-4"> <i class="fa fa-thermometer-full"></i>Weather Finder!</h1>
+               </h1>
+               <p class="p-2"></p>
+            </div>
+         </header>
+         <main>
+            <div class="row">
+               <div class=" col-sm-12   col-lg-3 ">
+                  <div class="form-group  p-1">
+                     <label for="cityInput"><strong>Search for your city:</strong></label>
+                     <div class="input-group">
+                        <input  class="form-control" type="input" name="cityText" id="cityInput">
+                        <div class="form-group-append" >
+                           <button type="button" id="cityButton" class="btn-primary h-100"><i class="fa fa-search"></i></button>
+                        </div>
+                     </div>
+                     <div class="form-group mt-2" id="cityContainer">
+                     </div>
+                  </div>
+               </div>
+               <div class="col" >
+                  <div class="col " id="forecastContainer">
+                  </div>
+                  <div class="col p-3 col-sm-9  text-white">
+                     <div class="row" id="extendedContainer">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </main>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+      <script src="./assets/script.js"></script>
+   </body>
 </html>
