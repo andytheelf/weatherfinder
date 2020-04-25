@@ -14,7 +14,7 @@ $(document).ready(() => {
         event.preventDefault();
 
         if ($("#cityInput").val() != "") {
-            getWeather(titleCaseConvert($("#cityInput").val()));
+            getWeather(($("#cityInput").val()));
             $("#cityInput").val("");
         }
     });
@@ -28,7 +28,7 @@ $(document).ready(() => {
         let cities = "?q=" + checkCity;
 
         $.ajax({
-            url: forcastUrl + city + unitMeasure + "&" + apiKey + "&mode=json",
+            url: forecastUrl + cities + unitMeasure + "&" + apiKey + "&mode=json",
             method: "GET",
             success: function() {
                 addButton(checkCity);
@@ -40,6 +40,43 @@ $(document).ready(() => {
             weatherUpdate(response);
         });
 
+        $.ajax({
+            url: fiveDayUrl + cities + unitMeasure + "&" + apiKey,
+            method: "GET",
+            error: function() {
+                console.log("Unavailable");
+            }
+        }).then(function(extendResponse) {
+            $("#forecastContainer").append(
+                $("<div>")
+                .addClass("col vard bg-primary m-2 p-2")
+                .append(
+                    $("<h3>").text(
+                        moment.unix(extendResponse.list[i].dt).format("M/DD/YYYY")
 
+                    )
+                )
+                .append(
+                    $("<img>").attr(
+                        "src",
+                        "https://openweathermap.org/img/wn/" +
+                        extendResponse.list[i].weather[0].icon + ".png"
+                    )
+                )
+                .append(
+                    $("<p>").text(
+                        "Temp: " + 
+                        extendResponse.list[i].main.temp + String.fromCharCode(176) + "F"
+                    )
+                )
+                .append(
+                    $("<p>").text(
+                        "Humitdity: " + extendResponse.list[i].main.humidity
+                    )
+                )
+            );
+        })
     }
+
+    
 });
