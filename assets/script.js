@@ -47,11 +47,13 @@ $(document).ready(() => {
                 console.log("Unavailable");
             }
         }).then(function(extendResponse) {
-            $("#forecastContainer").append(
+            $("#extendedContainer").empty();
+            for (let i = 4; i < extendResponse.list.length; i += 8) {
+            $("#extendedContainer").append(
                 $("<div>")
-                .addClass("col vard bg-primary m-2 p-2")
+                .addClass("col card bg-info m-3 p-2")
                 .append(
-                    $("<h3>").text(
+                    $("<h4>").text(
                         moment.unix(extendResponse.list[i].dt).format("M/DD/YYYY")
 
                     )
@@ -75,8 +77,15 @@ $(document).ready(() => {
                     )
                 )
             );
-        })
+          }
+        });
     }
 
-    
+    function getUVIndex(lat,lon) {
+        
+    }
+
+    function weatherUpdate(data) {
+      
+    };
 });

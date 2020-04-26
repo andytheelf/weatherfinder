@@ -1,0 +1,68 @@
+body {
+    color: black;
+    background-color: rgb(66, 73, 80);
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+  
+  }
+  h2{
+  font-size: 30px;
+  }
+  
+
+  
+
+  .column {
+    float:left;
+    padding: 0 20px;
+  }
+  
+ 
+  .row {
+    margin: 0 5px;
+  }
+  
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  
+  
+  .card {
+    display:block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    color: black;
+    text-align: center;
+    background-color: teal;
+    width:25em;
+    height:15em;
+
+  }
+
+  #forecastContainer {
+    display:block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    color: black;
+    text-align: center;
+    background-color:#17a2b8;
+    width:80%;
+    height:15em;
+    font-size: 1.5em;
+    border: 2px dotted black;
+  }
+
+  #cityInput {
+    display:block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    color: black;
+    text-align: center;
+    background-color:#17a2b8;
+    width:10em;
+    height:2em;
+  }
