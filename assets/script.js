@@ -73,7 +73,7 @@ $(document).ready(() => {
                     )
                     .append(
                         $("<p>").text(
-                            "Humitdity: " + extendResponse.list[i].main.humidity
+                            "Humidity: " + extendResponse.list[i].main.humidity
                         )
                     )
                 );
